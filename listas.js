@@ -1,17 +1,43 @@
-// Listas sempre começam do 0.
+console.log(`\nTrabalhando com condicionais`);
 const listaDeDestinos = new Array(
+    `Salvador`,
     `São Paulo`,
-    `Rio de Janeiro`,
-    `Salvador`
+    `Rio de Janeiro`
 );
 
-// Inserindo um item na lista. 
 listaDeDestinos.push(`Curitiba`);
 
-// Retirando um item da lista. Primeiro a posição e depois a quantidade de itens. No caso, retiramos Rio de Janeiro.
-listaDeDestinos.splice(1,1);
+const idadeComprador = 18;
+const estaAcompanhada = false;
+let temPassagemComprada = false;
+const destino = "Curitiba";
 
-// Exibindo apenas um elemento da lista. No caso, após a exclusão do Rio de Janeiro, estamos exibindo o item da posição 2, Curitiba.
-console.log(listaDeDestinos[2]);
-
+console.log("\n Destinos possíveis:");
 console.log(listaDeDestinos);
+
+const podeComprar  = idadeComprador >= 18 || estaAcompanhada == true;
+
+let contador = 0;
+let destinoExiste = false;
+while(contador<3){
+    if(listaDeDestinos[contador] == destino){
+        destinoExiste = true;
+        break;
+    }
+    contador += 1;
+}
+
+console.log("Destino exite: ", destinoExiste);
+
+if(podeComprar && destinoExiste){
+    console.log("Boa Viagem");
+}else{
+    console.log("Desculpe tivemos um erro!");
+}
+
+for(let i  = 0 ; i < 3 ; i++){
+    if(listaDeDestinos[i] == destino){
+        destinoExiste = true;
+    }
+   
+}
